@@ -3,6 +3,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  z-index: 10;
   &__bg {
     position: absolute;
     top: 0;

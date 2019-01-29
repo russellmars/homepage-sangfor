@@ -81,7 +81,7 @@
 </style>
 
 <template>
-  <div class="intro-card" :class="[`intro-card--${type}`]">
+  <div class="intro-card" :class="[modifierClass]">
     <img class="intro-card__icon" v-if="card.icon" :src="card.icon" alt="">
     <div class="intro-card__top" :style="{ backgroundImage: `url(${card.poster})` }">
       <template v-if="type === 'simple'">
@@ -110,6 +110,11 @@ export default {
       }
     },
     card: Object
+  },
+  computed: {
+    modifierClass() {
+      return `intro-card--${this.type}`;
+    }
   }
 };
 </script>

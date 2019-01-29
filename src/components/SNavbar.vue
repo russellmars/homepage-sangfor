@@ -2,6 +2,8 @@
 @navbar-height: 80px;
 
 .navbar {
+  position: relative;
+  z-index: 20;
   color: black;
   height: @navbar-height;
   text-align: center;
@@ -46,7 +48,7 @@
 </style>
 
 <template>
-  <div class="navbar" :class="[themeClass]">
+  <div class="navbar" :class="[modifierClass]">
     <img class="navbar__logo" :src="logo" alt>
     <ul class="navbar__list">
       <li class="navbar__item">产品与解决方案</li>
@@ -72,8 +74,8 @@ export default {
     }
   },
   computed: {
-    themeClass() {
-      return "navbar--" + this.theme;
+    modifierClass() {
+      return `navbar--${this.theme}`;
     },
     logo() {
       if (this.theme === "black") {
