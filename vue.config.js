@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/homepage-sangfor/" : "/"
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/homepage-sangfor/" : "/",
+  outputDir: "docs"
 };
