@@ -1,22 +1,24 @@
 <style lang="less" scoped>
 .rotate360 {
   position: absolute;
-  width: 650px;
-  height: 650px;
   left: 0;
   top: 0;
+  height: 100%;
+  width: 100%;
   transition: transform 2s ease-out;
   &--circle {
-    transform: rotate(360deg);
+    transform: rotate(360deg) translateZ(0);
   }
   &--semicircle {
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateZ(0);
   }
 }
 </style>
 
 <template>
-  <div class="rotate360" :class="[modifierClass]"></div>
+  <div class="rotate360" :class="[modifierClass]">
+    <slot></slot>
+  </div>
 </template>
 
 <script>

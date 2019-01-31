@@ -2,10 +2,10 @@
 .content-box1 {
   &__main {
     position: absolute;
-    top: 50%;
+    top: 150px;
     left: 0;
     width: 560px;
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
   }
   &__rotate-wrapper {
     position: absolute;
@@ -13,7 +13,6 @@
     right: -160px;
     height: 650px;
     width: 650px;
-    background: green;
   }
 }
 </style>
@@ -25,7 +24,7 @@
       <s-icon-button-list :list="buttons"/>
     </div>
     <div class="content-box1__rotate-wrapper">
-      <s-rotate360-box/>
+      <s-content-image-box :bg="images.bg" :logo="images.logo" :items="images.items"/>
     </div>
   </s-content-box>
 </template>
@@ -34,13 +33,13 @@
 import SContentBox from "./SContentBox";
 import SContentBoxText from "./SContentBoxText";
 import SIconButtonList from "./SIconButtonList";
-import SRotate360Box from "./SRotate360Box";
+import SContentImageBox from "./SContentImageBox";
 export default {
   components: {
     SContentBox,
     SContentBoxText,
     SIconButtonList,
-    SRotate360Box
+    SContentImageBox
   },
   data() {
     return {
@@ -171,7 +170,65 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      images: {
+        bg:
+          "http://download.sangfor.com.cn/Source/default/20181212/home/image/safety-bg.jpg",
+        logo:
+          "http://download.sangfor.com.cn/Source/default/20181212/home/image/safety.png",
+        items: [
+          {
+            type: "circle",
+            src:
+              "http://download.sangfor.com.cn/Source/default/20181212/home/image/safety-1m.png",
+            style: {
+              width: "100px",
+              top: "80px",
+              left: "140px"
+            }
+          },
+          {
+            type: "circle",
+            src:
+              "http://download.sangfor.com.cn/Source/default/20181212/home/image/safety-2m.png",
+            style: {
+              width: "75px",
+              top: "280px",
+              left: "165px"
+            }
+          },
+          {
+            type: "circle",
+            src:
+              "http://download.sangfor.com.cn/Source/default/20181212/home/image/safety-3m.png",
+            style: {
+              width: "90px",
+              top: "120px",
+              left: "350px"
+            }
+          },
+          {
+            type: "semicircle",
+            src:
+              "http://download.sangfor.com.cn/Source/default/20181212/home/image/safety-4m.png",
+            style: {
+              width: "130px",
+              bottom: "350px",
+              right: "40px"
+            }
+          },
+          {
+            type: "circle",
+            src:
+              "http://download.sangfor.com.cn/Source/default/20181212/home/image/safety-5m.png",
+            style: {
+              width: "90px",
+              top: "450px",
+              left: "300px"
+            }
+          }
+        ]
+      }
     };
   }
 };
